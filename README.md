@@ -1,56 +1,60 @@
-# Todo-List
-class TodoList:
-    def __init__(self):
-        self.tasks = []
+## To-Do List Application ##
 
-    def add_task(self, task):
-        self.tasks.append(task)
-        print("Task added successfully!")
+This is a simple command-line To-Do List application built using Python. It allows you to add,edit,delete and display tasks in a user-friendly way. 
+The tasks are stored in a list and you can interact with the application through a text-based menu.
 
-    def edit_task(self, index, new_task):
-        if index >= 0 and index < len(self.tasks):
-            self.tasks[index] = new_task
-            print("Task edited successfully!")
-        else:
-            print("Invalid task index")
+## Features
 
-    def delete_task(self, index):
-        if index >= 0 and index < len(self.tasks):
-            del self.tasks[index]
-            print("Task deleted successfully!")
-        else:
-            print("Invalid task index")
+- **Add Task**: Add a new task to your to-do list.
+- **Edit Task**: Modify an existing task by specifying its index.
+- **Delete Task**: Remove a task from your to-do list by specifying its index.
+- **Display Tasks**: View all tasks currently in your to-do list.
+- **Exit**: Exit the application.
 
-    def display_tasks(self):
-        if self.tasks:
-            print("Your To-Do List:")
-            for i, task in enumerate(self.tasks, 1):
-                print(f"{i}. {task}")
-        else:
-            print("Your To-Do List is empty!")
+## Prerequisites
 
-def main():
-    todo_list = TodoList()
-    while True:
-        print("\n1. Add Task\n2. Edit Task\n3. Delete Task\n4. Display Tasks\n5. Exit")
-        choice = input("Enter your choice: ")
-        if choice == '1':
-            task = input("Enter task: ")
-            todo_list.add_task(task)
-        elif choice == '2':
-            index = int(input("Enter index of task to edit: ")) - 1
-            new_task = input("Enter new task: ")
-            todo_list.edit_task(index, new_task)
-        elif choice == '3':
-            index = int(input("Enter index of task to delete: ")) - 1
-            todo_list.delete_task(index)
-        elif choice == '4':
-            todo_list.display_tasks()
-        elif choice == '5':
-            print("Exiting...")
-            break
-        else:
-            print("Invalid choice. Please try again.")
+- Python 3.x
 
-if __name__ == "__main__":
-    main()
+## Installation
+
+1. Clone this repository or copy the Python code into a `.py` file.
+2. Make sure Python is installed on your system.
+3. Run the script using the command:
+
+    ```bash
+    python todo_list.py
+    ```
+
+## How to Use
+
+1. When you run the program, you'll be prompted with a menu.
+2. You can choose one of the following options:
+   - `1. Add Task`: To add a new task to your list.
+   - `2. Edit Task`: To edit an existing task by specifying its index.
+   - `3. Delete Task`: To delete a task by specifying its index.
+   - `4. Display Tasks`: To see the current list of tasks.
+   - `5. Exit`: To quit the application.
+
+3. Follow the prompts to enter your task or specify the task index.
+4. Tasks are numbered starting from `1` for ease of use.
+
+## Example
+
+```bash
+1. Add Task
+2. Edit Task
+3. Delete Task
+4. Display Tasks
+5. Exit
+Enter your choice: 1
+Enter task: Buy groceries
+Task added successfully!
+
+1. Add Task
+2. Edit Task
+3. Delete Task
+4. Display Tasks
+5. Exit
+Enter your choice: 4
+Your To-Do List:
+1. Buy groceries
